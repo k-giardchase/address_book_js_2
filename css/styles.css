@@ -1,0 +1,17 @@
+#contacts {
+  display: none;
+}
+
+.clickable {
+  color: #0088ff;
+  cursor: pointer;
+}
+
+.clickable:hover {
+  text-decoration: underline;
+}
+
+.info {
+  color: slategrey;
+  font-style: italic;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="js/scripts.js"></script>
+  <title>Address Book</title>
+</head>
+<body>
+  <div class="container">
+
+    <h1>Welcome to Address Book Javascript Edition</h1>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <form id="addContact">
+
+          <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input class="form-control" type="text" id="firstName">
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input class="form-control" type="text" id="lastName">
+          </div>
+
+          <div class="form-group">
+            <label for="address">Address:</label>
+            <input class="form-control" type="text" id="address">
+          </div>
+
+            <button class="btn btn-success"type="submit">Add Contact</button>
+        </form>
+
+        <h2>Contact List</h2>
+        <ul id="contact-list">
+
+        </ul>
+      </div>
+
+      <div class="col-sm-6">
+        <h2>Contacts</h2>
+        <ul id="contacts">
+          <p>First name: <span class="first-name info"></span></p>
+          <p>Last name: <span class="last-name info"></span></p>
+          <p>Address: <span class="address info"></span></p>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,6 +1,6 @@
 # Address Book exercise for Epicodus
 
-### Cynthia Wilhelm & Tom Mertz
+### Kyle Giard-Chase & Tom Mertz
 
 ###### April 13, 2015
 

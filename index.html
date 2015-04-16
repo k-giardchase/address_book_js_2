@@ -20,19 +20,19 @@
 
           <div class="col-md-6">
             <label for="firstName">First Name:</label>
-            <input class="form-control" type="text" id="firstName">
+            <input class="form-control" type="text" id="firstName" value='Firsty'>
           </div>
 
           <div class="col-md-6">
             <label for="lastName">Last Name:</label>
-            <input class="form-control" type="text" id="lastName">
+            <input class="form-control" type="text" id="lastName" value='Laster'>
           </div>
       </div><br>
 
       <div id='new-addresses'>
           <div class='new-address'>
         <div class='form-group'>
-            <select id="address-type">
+            <select class ="addressType">
                 <option id='type' value='Address'>Address Type</option>
                 <option id='home' value='Home'>Home</option>
                 <option id='office' value='Office'>Office</option>
@@ -45,23 +45,19 @@
         </div>
 
           <div class="form-group">
-            <label for="street">Street:</label>
-            <input class="form-control" type="text" id="street">
+            <input class="form-control street" type="text" placeholder="Street" value='123 Street'>
           </div>
 
           <div class="form-group">
-            <label for="city">City:</label>
-            <input class="form-control" type="text" id="city">
+            <input class="form-control city" type="text" placeholder="City" value='Portland'>
           </div>
 
           <div class="form-group">
-            <label for="state">State:</label>
-            <input class="form-control" type="text" id="state">
+            <input class="form-control state" type="text" placeholder="State" value='OR'>
           </div>
 
           <div class="form-group">
-            <label for="zipcode">Zip Code:</label>
-            <input class="form-control" type="text" id="zipcode">
+            <input class="form-control zipcode" type="text" placeholder="Zipcode" value='97979'>
           </div>
 
           </div>
@@ -72,20 +68,19 @@
 
 
         <h2>Contact List</h2>
-        <ul id="contact-list">
+        <ul id="contacts">
 
         </ul>
       </div>
 
       <div class="col-sm-6">
+          <div id="show-contact">
         <h2>Contacts</h2>
-        <ul id="contacts">
-          <p>First name: <span class="first-name info"></span></p>
-          <p>Last name: <span class="last-name info"></span></p>
-          <p>Address: <span class="address info"></span></p>
+          <p>First name: <span class="first-name"></span></p>
+          <p>Last name: <span class="last-name"></span></p>
               <ul id='addresses'>
               </ul>
-        </ul>
+        </div>
       </div>
     </div>
   </div>

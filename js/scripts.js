@@ -1,24 +1,16 @@
 $(document).ready(function() {
     $("#add-address").click(function() {
-        $("new_address").append('<div class="new-address">' +
-            '<div class="form-group">' +
-            '<label for="new-street">Street</label>' +
-               '<input type="text" class="form-control new-street">' +
-             '</div>' +
-             '<div class="form-group">' +
-               '<label for="new-city">City</label>' +
-               '<input type="text" class="form-control new-city">' +
-             '</div>' +
-             '<div class="form-group">' +
-               '<label for="new-state">State</label>' +
-               '<input type="text" class="form-control new-state">' +
-             '</div>' +
-           '</div>');
-    });
+        $("#new-addresses").append('<div class="new-address">' +
+         '<div class="form-group">' + '<input type="text" class="form-control street" placeholder="New Address">' + '</div>' +
+         '<div class="form-group">' + '<input type="text" class="form-control city" placeholder="City">' + '</div>' +
+         '<div class="form-group">' + '<input type="text" class="form-control state" placeholder="State">' +
+         '</div>' +
+         '<div class="form-group">' + '<input type="text" class="form-control zipcode" placeholder="Zipcode">' + '</div>' + '<div class="form-group">' + '<select class ="addressType">'+'<option id="type" value="Address">' + "Address Type" + '</option>'+'<option id="home" value="Home">' + "Home" + '</option>'+'<option id="office" value="Office">' + "Office" + '</option>'+'<option id="vacation" value="Vacay Home">' + "Vacay Home" + '</option>'+'<option id="mansion" value="Mansion">' + "Mansion" + '</option>'+'<option id="mancave" value="Man-Cave">' + "Man-Cave" + '</option>'+'<option id="treehouse" value="Treehouse">' + "Treehouse" + '</option>' + '<option id="guesthouse" value="Guesthouse">' + "Guesthouse" + '</option>' + '</select>' + '</div>' + '</div>');
+      });
 
   $("#addContact").submit(function(event) {
-    var firstNameForm = $("#firstName").val();
-    var lastNameForm = $("#lastName").val();
+    var firstNameForm = $(".firstName").val();
+    var lastNameForm = $(".lastName").val();
 
     var newContact = {
       firstName: firstNameForm,
@@ -27,47 +19,43 @@ $(document).ready(function() {
     };
 
     $(".new-address").each(function() {
-        var street = $(this).find("input.street").val();
-        var city = $(this).find("input.city").val();
-        var state = $(this).find("input.state").val();
-        var zipcode = $(this).find("input.zipcode").val();
-        var addressType = $(this).find("input.addressType").val();
+        var streetForm = $(this).find("input.street").val();
+        var cityForm = $(this).find("input.city").val();
+        var stateForm = $(this).find("input.state").val();
+        var zipcodeForm = $(this).find("input.zipcode").val();
+        var addressTypeForm = $(this).find("select.addressType").val();
 
         var newAddress = {
-          street: street,
-          city: city,
-          state: state,
-          zipcode: zipcode,
-          addressType: addressType
+          street: streetForm,
+          city: cityForm,
+          state: stateForm,
+          zipcode: zipcodeForm,
+          addressType: addressTypeForm
         };
-        console.log(newAddress);
         newContact.addresses.push(newAddress);
-        console.log(newContact);
-        debugger;
-
     });
-
-    $("#contact-list").append("<li><span class='contact clickable'>" + newContact.firstName + "</span></li>");
+    $("ul#contacts").append("<li><span class='contact'>" + newContact.firstName + "</span></li>");
 
     $(".contact").last().click(function() {
-      $("#contacts").show();
+      $("#show-contact").show();
 
-      $(".first-name").text(newContact.firstName);
-      $(".last-name").text(newContact.lastName);
+      $("#show-contact h2").text(newContact.firstName);
+      $(".firstName").text(newContact.firstName);
+      $(".lastName").text(newContact.lastName);
 
-      $("ul#addresses").text("");
+      $("#addresses").text("");
       newContact.addresses.forEach(function(address) {
-          $("ul#addresses").append("<li>" + address.addressType + ", " address.street + ", " + address.city + ", " + address.state + "</li>");
+          $("#addresses").append("<li>" + address.addressType + ", " + address.street + ", " + address.city + ", " + address.state + "</li>");
       });
     });
 
-    $("input#firstName").val();
-    $("input#lastName").val();
+    $("input.firstName").val();
+    $("input.lastName").val();
     $("input.street").val();
     $("input.city").val();
     $("input.state").val();
     $("input.zipcode").val();
-    $("input.address-type").val();
+    $("input.addressType").val();
 
     event.preventDefault();
   });

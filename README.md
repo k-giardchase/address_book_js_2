@@ -1,6 +1,6 @@
 # Address Book exercise for Epicodus
 
-### Kyle Giard-Chase & Tom Mertz
+### Kyle Giard-Chase & James Nielson
 
 ###### April 13, 2015
 

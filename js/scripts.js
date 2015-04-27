@@ -8,15 +8,15 @@ $(document).ready(function() {
          '<div class="form-group">' + '<input type="text" class="form-control zipcode" placeholder="Zipcode">' + '</div>' + '<div class="form-group">' + '<select class ="addressType">'+'<option id="type" value="Address">' + "Address Type" + '</option>'+'<option id="home" value="Home">' + "Home" + '</option>'+'<option id="office" value="Office">' + "Office" + '</option>'+'<option id="vacation" value="Vacay Home">' + "Vacay Home" + '</option>'+'<option id="mansion" value="Mansion">' + "Mansion" + '</option>'+'<option id="mancave" value="Man-Cave">' + "Man-Cave" + '</option>'+'<option id="treehouse" value="Treehouse">' + "Treehouse" + '</option>' + '<option id="guesthouse" value="Guesthouse">' + "Guesthouse" + '</option>' + '</select>' + '</div>' + '</div>');
       });
 
-  $("#addContact").submit(function(event) {
-    var firstNameForm = $(".firstName").val();
-    var lastNameForm = $(".lastName").val();
+    $("#addContact").submit(function(event) {
+      var firstNameForm = $(".firstName").val();
+      var lastNameForm = $(".lastName").val();
 
-    var newContact = {
-      firstName: firstNameForm,
-      lastName: lastNameForm,
-      addresses: []
-    };
+      var newContact = {
+        firstName: firstNameForm,
+        lastName: lastNameForm,
+        addresses: []
+      };
 
     $(".new-address").each(function() {
         var streetForm = $(this).find("input.street").val();
@@ -32,9 +32,11 @@ $(document).ready(function() {
           zipcode: zipcodeForm,
           addressType: addressTypeForm
         };
+
         newContact.addresses.push(newAddress);
     });
-    $("ul#contacts").append("<li><span class='contact'>" + newContact.firstName + "</span></li>");
+
+    $("ul#contacts").append("<li><span class='contact clickable'>" + newContact.firstName + "</span></li>");
 
     $(".contact").last().click(function() {
       $("#show-contact").show();
